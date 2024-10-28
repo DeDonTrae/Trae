@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -56,20 +56,93 @@
         <h2>About Me</h2>
         <p>This is a paragraph about me. You can write some information about yourself here.</p>
         <h2>My Portfolio</h2>
-<!--         <div>
+        <div>
             <img src="assets/image1.jpg" alt="Image 1">
             <p>Description of image 1</p>
         </div>
         <div>
             <img src="assets/image1.jpg" alt="Image 1">
             <p>Description of image 2</p>
-        </div> -->
-        <!-- Add more images and descriptions as needed -->
+        </div>
+        <!-- Add more images and descriptions as needed 
     </section>
 
     <footer>
         <p>&copy; 2024 My Profile. All rights reserved.</p>
     </footer>
 
+</body>
+</html>
+ --><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rotating Hourglass Loader</title>
+  <style>
+    /* Checkered Background */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #333;
+      background-image: 
+        linear-gradient(45deg, #555 25%, transparent 25%, transparent 75%, #555 75%, #555),
+        linear-gradient(45deg, #555 25%, transparent 25%, transparent 75%, #555 75%, #555);
+      background-size: 40px 40px;
+      background-position: 0 0, 20px 20px;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    /* Rotating Hourglass Loader */
+    .loader {
+      width: 50px;
+      height: 80px;
+      position: relative;
+      animation: rotate 2s infinite linear;
+    }
+    
+    .loader::before,
+    .loader::after {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      border: 4px solid #fff;
+      border-bottom: none;
+      border-top: none;
+      border-radius: 50% 50% 0 0;
+      animation: sand 2s infinite linear;
+    }
+
+    .loader::before {
+      top: 0;
+      border-bottom-left-radius: 50%;
+      transform-origin: bottom center;
+    }
+    
+    .loader::after {
+      bottom: 0;
+      border-top-left-radius: 50%;
+      transform-origin: top center;
+      animation-delay: 1s;
+    }
+
+    /* Keyframes for rotation and sand flow */
+    @keyframes rotate {
+      0%, 50% { transform: rotate(0deg); }
+      100% { transform: rotate(180deg); }
+    }
+
+    @keyframes sand {
+      0%, 50% { height: 50px; }
+      100% { height: 0px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="loader"></div>
 </body>
 </html>
