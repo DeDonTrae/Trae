@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotating 3D Dice with Web AR</title>
+    <!-- Load A-Frame and AR.js -->
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js@3.3.2/aframe/build/aframe-ar.min.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+    <!-- AR.js Scene Setup -->
+    <a-scene embedded arjs>
+        <!-- Define the marker -->
+        <a-marker preset="hiro">
+            <!-- 3D Dice (cube) setup with texture -->
+            <a-box position="0 0.5 0" rotation="0 45 0" scale="0.5 0.5 0.5" material="src: #diceTexture" 
+                animation="property: rotation; to: 0 360 0; loop: true; dur: 3000">
+            </a-box>
+        </a-marker>
+
+        <!-- Camera for AR.js -->
+        <a-entity camera></a-entity>
+
+        <!-- Add a texture image for the dice -->
+        <a-assets>
+            <!-- You can use a custom dice texture or a standard one -->
+            <img id="diceTexture" src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js@3.3.2/aframe/examples/assets/dice.jpg" />
+        </a-assets>
+    </a-scene>
+</body>
+</html>
